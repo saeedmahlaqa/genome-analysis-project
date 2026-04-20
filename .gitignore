@@ -1,0 +1,31 @@
+# Raw data
+
+raw_data/
+
+# Assembly outputs
+
+assembly_output/
+results/
+correction/
+trimming/
+unitigging/
+
+# Large bioinformatics files
+
+*.fastq
+*.fq
+*.fasta
+*.fa
+*.bam
+*.sam
+*.gz
+*.dat
+
+# Logs
+
+*.log
+
+# Temporary files
+
+*.tmp
+*.out
