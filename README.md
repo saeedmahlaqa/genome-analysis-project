@@ -71,6 +71,20 @@ All analyses were performed on the **UPPMAX (Pelle cluster)** using SLURM job sc
    * The assembled genome was compared to a reference genome using MUMmer
    * A dot plot was generated to visualize structural similarity
 
+6. **Genome Annotation (Prokka)**
+
+Genome annotation was performed using Prokka on the assembled *Enterococcus faecium* genome.
+
+**Results:**
+- Contigs: 10 
+- Genome size: ~3.11 Mb 
+- Coding sequences (CDS): 3093 
+- tRNA: 70 
+- tmRNA: 1 
+
+The number of predicted genes is consistent with typical bacterial genomes, indicating a biologically realistic annotation. The presence of tRNA and tmRNA genes further supports the completeness of the genome.
+
+Although the genome remains fragmented into multiple contigs, the annotation results are consistent with the high completeness observed in BUSCO analysis (~98%).
 ---
 
 ## 📊 Results
