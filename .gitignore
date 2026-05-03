@@ -2,9 +2,13 @@
 
 raw_data/
 
+analyses/
+
 # Assembly outputs
 
 assembly_output/
+busco_output/
+prokka_output/
 results/
 correction/
 trimming/
@@ -29,3 +33,4 @@ unitigging/
 
 *.tmp
 *.out
+*.err
