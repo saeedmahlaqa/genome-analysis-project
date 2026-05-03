@@ -7,9 +7,8 @@
 #SBATCH --output=bwa_index.%j.out
 #SBATCH --error=bwa_index.%j.err
 
-module load bwa
+module load BWA/0.7.19-GCCcore-13.3.0
 
-# Use your assembled genome (this path is correct from your earlier work)
 GENOME=~/Individual-Project-/analyses/01_genome_assembly/assembly_output/*.fasta
 
 bwa index $GENOME
