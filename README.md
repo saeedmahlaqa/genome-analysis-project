@@ -1,18 +1,51 @@
-# 🧬 Genome Analysis Project – *Enterococcus faecium*
+# Genome Analysis Project – *Enterococcus faecium*
 
-## 🧬 Overview
+## Project Overview
 
-This project performs **de novo genome assembly and analysis** of *Enterococcus faecium* using long-read sequencing data.
+This project was completed as part of the Genome Analysis course
+at Uppsala University.
 
 ### Objectives
+
+The Objective of the project was to perform a complete de 
+novo bacterial genome assemble and ananlysis workflow using 
+long-read genome sequencing data together with RNA-seq 
+transcriptomic data.
+ 
+### Reference Paper
+
+This project follows the workflow presented in the 
+course student manual and is based on the following study:
+
+Zhang X, de Maat V, Guzmán Prieto AM, Prajsnar TK, Bayjanov JR, de Been M, et al.  
+*RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant Enterococcus faecium during growth in human serum.*  
+BMC Genomics. 2017;18:893. https://doi.org/10.1186/s12864-017-4299-9
+
+The organism analyzed in this project is: 
+** Enterococcus faecium**
+The project includes 
+1. Raw read quality control
+2. Genome assembly using long-reads
+3. Assembly evaluation
+4. Genome annotation
+5. Functional annotation
+6. RNA-seq mapping
+7. Gene expression quantification
+8. Differential expression analysis
+9. Antibiotic resistance analysis
+10. Plasmid analysis
+11. Visualization of genomic features
+
+# Biological Background
+## What is Enterococcus faecium?
 
 * Assemble a genome from raw PacBio reads
 * Evaluate assembly quality
 * Assess genome completeness
-* Compare the assembled genome to a reference genome (synteny analysis)
+* Compare the assembled genome to a reference genome 
+(synteny analysis)
 
 All analyses were performed on the **UPPMAX (Pelle cluster)** using SLURM job scheduling.
-
 ---
 
 ## 📁 Data
