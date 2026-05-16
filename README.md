@@ -5,14 +5,14 @@
 This project was completed as part of the Genome Analysis course
 at Uppsala University.
 
-### Objectives
+## Objectives
 
 The Objective of the project was to perform a complete de 
 novo bacterial genome assemble and ananlysis workflow using 
 long-read genome sequencing data together with RNA-seq 
 transcriptomic data.
  
-### Reference Paper
+## Reference Paper
 
 This project follows the workflow presented in the 
 course student manual and is based on the following study:
@@ -22,7 +22,7 @@ Zhang X, de Maat V, Guzmán Prieto AM, Prajsnar TK, Bayjanov JR, de Been M, et a
 BMC Genomics. 2017;18:893. https://doi.org/10.1186/s12864-017-4299-9
 
 The organism analyzed in this project is: 
-** Enterococcus faecium**
+ ** Enterococcus faecium**
 The project includes 
 1. Raw read quality control
 2. Genome assembly using long-reads
@@ -36,23 +36,99 @@ The project includes
 10. Plasmid analysis
 11. Visualization of genomic features
 
+## Data
+
+*Organism: Enterococcus faecium (vancomycin-resistant strain)
+
+*Data types:
+
+** RNA-seq (gene expression analysis)
+** Tn-seq (fitness/essential gene analysis)
+** Genome sequencing data
+
+* Sequencing technologies:
+** Short reads (Illumina)
+** Long reads (PacBio / Nanopore)
+
+*Experimental conditions:
+
+** Human serum vs rich medium
+* Replicates:
+
+** Multiple biological replicates per condition
+* Reference genome:
+
+** E. faecium strain E745 (used for mapping and comparison)
+
 # Biological Background
 ## What is Enterococcus faecium?
+Enterococcus faecium is a gram-positive bacterium commonly
+found in the gastrointestinal tract. Some strains are clinically 
+important because they can develop resistance to antibiotics and
+cause hospital-acquired infections.
 
-* Assemble a genome from raw PacBio reads
+The purpose of this project was to reconstruct and analyze the
+genome of E.faecium using sequencing data and bioinformatics 
+tools.
+
+### Project Goals
+
+The main goals of this project were:
+* Assemble the bacterial genome from long-read sequencing data
 * Evaluate assembly quality
-* Assess genome completeness
-* Compare the assembled genome to a reference genome 
-(synteny analysis)
+* Annotate genes and genomic features
+* Analyze gene functions
+* Map RNA-seq reads to the assembled genome
+* Quantify gene expression 
+* Identify differentially expressed genes
+* Detect antibiotic resistance genes
+* Investigate plasmid-related sequences
 
-All analyses were performed on the **UPPMAX (Pelle cluster)** using SLURM job scheduling.
----
+## Project Structure
 
-## 📁 Data
+annotation/
+assembly/
+assembly_evaluation/
+expression_analysis/
+logs/
+mapping/
+plasmid_analysis/
+qc/
+reference_genome/
+resistance_analysis/
+results/
+scripts/
+visualization/
 
-* **Type:** PacBio long-read sequencing data
-* **Organism:** *Enterococcus faecium*
-* **Location:** UPPMAX cluster (not included in repository)
+# Data used in the Project
+
+### 1. Genome Sequencing Reads
+Technology: PacBio long-read sequencing.
+Purpose: Used for de novo genome assembly.
+Location: raw_data/genome_reads/pacbio/
+Input Files
+m131023_*.fastq.gz
+m131024_*.fastq.gz
+
+These files contain raw PacBio sequencing reads.
+
+### 2. RNA-seq Transcriptomic Reads
+Technology: Illumina paired-end RNA sequencing
+Purpose: Used for transcriptome analysis and differential gene expression.
+Conditions: Two biological conditions were analyzed:
+* Serum
+* BH medium
+Location: raw_data/rnaseq_reads/
+Input Files: 
+ERR1797969_1.fastq.gz
+ERR1797969_2.fastq.gz
+...
+ERR1797974_1.fastq.gz
+ERR1797974_2.fastq.gz
+The _1 and _2 files represent paired-end reads.
+
+
+
 
 ---
 
