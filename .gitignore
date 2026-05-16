@@ -1,36 +1,35 @@
-# Raw data
-
-raw_data/
-
-analyses/
-
-# Assembly outputs
-
-assembly_output/
-busco_output/
-prokka_output/
-results/
-correction/
-trimming/
-unitigging/
-
-# Large bioinformatics files
-
+# Raw sequencing reads
 *.fastq
 *.fq
-*.fasta
-*.fa
+*.fastq.gz
+*.fq.gz
+
+# Alignment files
 *.bam
+*.bai
 *.sam
-*.gz
+
+# Large Canu intermediate databases
 *.dat
+*.tig
+*.dump
 
-# Logs
+assembly/canu/correction/
+assembly/canu/trimming/
+assembly/canu/unitigging/
 
-*.log
+# Large compressed/intermediate files
+*.tar
+*.gz
 
 # Temporary files
-
 *.tmp
-*.out
+
+# Logs
+*.log
 *.err
+*.out
+
+# Python cache
+__pycache__/
+.DS_Store
