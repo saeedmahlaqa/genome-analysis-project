@@ -1031,18 +1031,41 @@ Together, these findings demonstrate that successful bloodstream survival of E. 
 
 ---
 
+## Discussion:
+This project successfully reproduced the major analytical framework of the reference study while providing hands-on experience with modern bacterial genomics and transcriptomics workflows.
+
+The combination of long-read genome assembly and RNA-seq analysis enabled reconstruction of both genomic structure and functional activity of the organism.
+
+The assembly produced a high-quality bacterial genome with strong completeness metrics according to BUSCO and QUAST evaluation, indicating that the assembled genome was suitable for downstream analyses such as annotation and RNA-seq mapping.
+
+Functional annotation revealed thousands of predicted coding sequences involved in:
+
+metabolism
+transport
+replication
+stress response
+antimicrobial resistance
+
+Differential expression analysis showed that growth in serum triggers major transcriptional remodeling in E. faecium. This reflects the metabolic pressure imposed by the host bloodstream environment.
+
+Importantly, the project findings support the conclusions of the original paper that nucleotide biosynthesis pathways are central to bacterial fitness during infection-related conditions.
+
+The project also demonstrates how combining multiple sequencing technologies and bioinformatics approaches can provide a systems-level understanding of bacterial pathogenicity.
+
+---
+
 # Conclusion
 
-The genome of *Enterococcus faecium* was successfully assembled and analyzed using long-read sequencing and RNA-seq data.
+This project successfully reconstructed and analyzed the genome of vancomycin-resistant Enterococcus faecium using long-read sequencing data together with RNA-seq transcriptomic analysis.
 
-Assembly evaluation using QUAST, BUSCO, and MUMmer indicated:
+Genome assembly and evaluation demonstrated that high-quality bacterial genomes can be generated using PacBio long reads and validated through complementary assembly assessment tools such as QUAST, BUSCO, and MUMmer.
 
-* high assembly quality
-* strong genome completeness
-* structural similarity to the reference genome
+Genome annotation and functional annotation identified thousands of coding sequences and biologically important pathways involved in metabolism, transport, stress response, and antimicrobial resistance.
 
-Genome annotation and functional annotation identified biologically meaningful genomic features and predicted gene functions.
+RNA-seq analysis revealed major transcriptional differences between growth in rich medium and growth in human serum, indicating that E. faecium undergoes extensive metabolic adaptation in nutrient-limited host environments.
 
-RNA-seq analysis enabled investigation of gene expression changes, while resistance analysis identified clinically relevant antimicrobial resistance genes.
+In agreement with the findings of Zhang et al. (2017), genes involved in purine and pyrimidine biosynthesis, as well as carbohydrate uptake systems, appear to play essential roles in bacterial survival and fitness during serum growth.
 
-Overall, the project demonstrates a complete bacterial genome analysis workflow using modern bioinformatics tools and high-performance computing resources on UPPMAX.
+Resistance analysis further confirmed the multidrug-resistant nature of the isolate, consistent with the biology of clinically important VRE strains.
+
+Overall, this project demonstrates how integrated genome assembly, transcriptomics, functional annotation, and comparative genomics can be used to investigate bacterial pathogenicity and host adaptation mechanisms. The workflow also highlights the importance of metabolic pathways as potential therapeutic targets for combating bloodstream infections caused by multidrug-resistant Enterococcus faecium.
