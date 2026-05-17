@@ -988,15 +988,16 @@ Large intermediate files and raw sequencing data were excluded because of storag
 
 # Biological interpretation: 
 
-The analyses performed in this project provide important insights into how vancomycin-resistant Enterococcus faecium adapts to nutrient-limited environments such as human serum.
-
-RNA-seq analysis showed that many genes changed expression levels between growth in rich medium (BHI) and growth in serum conditions. These transcriptional changes indicate that E. faecium undergoes extensive metabolic adaptation in response to environmental stress and nutrient limitation.
+The analyses performed in this project provide important insights into how vancomycin-resistant Enterococcus faecium adapts to nutrient-limited environments such as human serum. RNA-seq analysis showed that many genes changed expression levels between growth in rich medium (BHI) and growth in serum conditions. These transcriptional changes indicate that E. faecium undergoes extensive metabolic adaptation in response to environmental stress and nutrient limitation.
 
 One of the most important findings was the increased importance of genes involved in:
 
 purine biosynthesis
+
 pyrimidine biosynthesis
+
 carbohydrate uptake systems
+
 stress adaptation pathways
 
 These findings are highly consistent with the reference study by Zhang et al. (2017), where nucleotide biosynthesis pathways were identified as critical for bacterial fitness during bloodstream growth.
