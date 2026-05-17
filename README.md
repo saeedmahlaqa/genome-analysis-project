@@ -30,15 +30,13 @@ The objective of this project was to perform a complete de novo bacterial genome
 
 ## Biological Background
 
-## #What is *Enterococcus faecium*?
+## What is *Enterococcus faecium*?
 
 *Enterococcus faecium* is a gram-positive bacterium commonly found in the gastrointestinal tract. Some strains are clinically important because they can develop resistance to antibiotics and cause hospital-acquired infections.
 
 Vancomycin-resistant *Enterococcus faecium* (VRE) strains are especially important in clinical microbiology because they are associated with multidrug resistance and bloodstream infections.
 
 The purpose of this project was to reconstruct and analyze the genome of *E. faecium* using sequencing data and bioinformatics tools.
-
----
 
 # Data Used in the Project
 
@@ -64,8 +62,6 @@ m131024_*.fastq.gz
 ```
 
 These files contain raw PacBio sequencing reads.
-
----
 
 ## 2. RNA-seq Transcriptomic Reads
 
@@ -99,14 +95,10 @@ ERR1797969_2.fastq.gz
 ERR1797974_1.fastq.gz
 ERR1797974_2.fastq.gz
 ```
-
 The `_1` and `_2` files represent paired-end reads.
-
 ---
 
-# Project Structure
-
-# Repository Structure
+# Project Repository Structure
 
 ```text
 genome-analysis-project/
@@ -114,6 +106,8 @@ genome-analysis-project/
 │   ├── eggnog
 │   │   ├── e_faecium_eggnog.emapper.annotations
 │   │   ├── e_faecium_eggnog.emapper.hits
+│   │   ├── eggnog.taxa.db
+│   │   ├── eggnog.taxa.db.traverse.pkl
 │   │   └── e_faecium_eggnog.emapper.seed_orthologs
 │   └── prokka
 │       ├── e_faecium.faa
@@ -121,6 +115,8 @@ genome-analysis-project/
 │       ├── e_faecium.fna
 │       ├── e_faecium.fsa
 │       ├── e_faecium.gbk
+│       ├── e_faecium.err
+│       ├── e_faecium.log
 │       ├── e_faecium.gff
 │       ├── e_faecium.tbl
 │       ├── e_faecium.tsv
@@ -241,24 +237,6 @@ genome-analysis-project/
 └── visualization
     └── igv
         └── igv_snapshot.png
-
-```text
-genome-analysis-project/
-├── annotation/
-├── assembly/
-├── assembly_evaluation/
-├── expression_analysis/
-├── logs/
-├── mapping/
-├── plasmid_analysis/
-├── qc/
-├── reference_genome/
-├── resistance_analysis/
-├── results/
-├── scripts/
-└── visualization/
-```
-
 ---
 
 # Step 1 – Quality Control of Raw Reads
