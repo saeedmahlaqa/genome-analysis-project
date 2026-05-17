@@ -12,13 +12,9 @@ The Objective of the project was to perform a complete de novo bacterial genome 
 
 This project follows the workflow presented in the  course student manual and is based on the following study:
 
-Zhang X, de Maat V, Guzmán Prieto AM, Prajsnar TK, Bayjanov JR, de Been M, et al.  
-***RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant Enterococcus faecium during growth in human serum.***  
-BMC Genomics. 2017;18:893. https://doi.org/10.1186/s12864-017-4299-9
+Zhang X, de Maat V, Guzmán Prieto AM, Prajsnar TK, Bayjanov JR, de Been M, et al. ***RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant Enterococcus faecium during growth in human serum.*** BMC Genomics. 2017;18:893. https://doi.org/10.1186/s12864-017-4299-9
 
-The organism analyzed in this project is **Enterococcus faecium.**
- 
-The project includes 
+The organism analyzed in this project is **Enterococcus faecium.** The project includes: 
 
 1. Raw read quality control
 2. Genome assembly using long-reads
@@ -34,45 +30,45 @@ The project includes
 
 ## Data
 
-* Organism: Enterococcus faecium (vancomycin-resistant 
-strain)
+* Organism: Enterococcus faecium (vancomycin-resistant strain)
+
 * Data types:
 
- - RNA-seq (gene expression analysis)
- - Tn-seq (fitness/essential gene analysis)
- - Genome sequencing data
+RNA-seq (gene expression analysis)
+
+Tn-seq (fitness/essential gene analysis)
+
+Genome sequencing data
 
 * Sequencing technologies:
 
- - Short reads (Illumina)
- - Long reads (PacBio / Nanopore)
+Short reads (Illumina)
+
+Long reads (PacBio / Nanopore)
 
 * Experimental conditions:
 
- - Human serum vs rich medium
+Human serum vs rich medium
 
 * Replicates:
 
- - Multiple biological replicates per condition
+Multiple biological replicates per condition
 
 * Reference genome:
 
- - E. faecium strain E745 (used for mapping and comparison)
+E. faecium strain E745 (used for mapping and comparison)
 
 ## Biological Background
-### What is Enterococcus faecium?
-Enterococcus faecium is a gram-positive bacterium commonly
-found in the gastrointestinal tract. Some strains are clinically 
-important because they can develop resistance to antibiotics and
-cause hospital-acquired infections.
 
-The purpose of this project was to reconstruct and analyze the
-genome of E.faecium using sequencing data and bioinformatics 
-tools.
+]### What is Enterococcus faecium?
+Enterococcus faecium is a gram-positive bacterium commonly found in the gastrointestinal tract. Some strains are clinically important because they can develop resistance to antibiotics and cause hospital-acquired infections.
+
+The purpose of this project was to reconstruct and analyze the genome of E.faecium using sequencing data and bioinformatics tools.
 
 ### Project Goals
 
 The main goals of this project were:
+
 * Assemble the bacterial genome from long-read sequencing data
 * Evaluate assembly quality
 * Annotate genes and genomic features
@@ -85,31 +81,20 @@ The main goals of this project were:
 
 ## Project Structure
 
-annotation/
-
-assembly/
-
-assembly_evaluation/
-
-expression_analysis/
-
-logs/
-
-mapping/
-
-plasmid_analysis/
-
-qc/
-
-reference_genome/
-
-resistance_analysis/
-
-results/
-
-scripts/
-
-visualization/
+genome-analysis-project/
+├── annotation/
+├── assembly/
+├── assembly_evaluation/
+├── expression_analysis/
+├── logs/
+├── mapping/
+├── plasmid_analysis/
+├── qc/
+├── reference_genome/
+├── resistance_analysis/
+├── results/
+├── scripts/
+└── visualization/
 
 ## Data used in the Project
 
@@ -128,51 +113,63 @@ raw_data/genome_reads/pacbio/
 
 * Input Files
 
-m131023_*.fastq.gz
-m131024_*.fastq.gz
+1. m131023_*.fastq.gz
+2. m131024_*.fastq.gz
 
 These files contain raw PacBio sequencing reads.
 
 ### 2. RNA-seq Transcriptomic Reads
 * Technology: 
+
 Illumina paired-end RNA sequencing
+
 * Purpose: 
+
 Used for transcriptome analysis and differential gene expression.
+
 * Conditions: 
+
 Two biological conditions were analyzed:
- - Serum
- - BH medium
+1. Serum
+2. BH medium
+
 * Location: 
+
 raw_data/rnaseq_reads/
+
 * Input Files: 
- - ERR1797969_1.fastq.gz
- - ERR1797969_2.fastq.gz
- - ...
- - ERR1797974_1.fastq.gz
- - ERR1797974_2.fastq.gz
+ERR1797969_1.fastq.gz
+ERR1797969_2.fastq.gz
+...
+ERR1797974_1.fastq.gz
+ERR1797974_2.fastq.gz
+
 The _1 and _2 files represent paired-end reads.
 
 ## Step 1 - Quality Control of Raw Reads
+
 * Purpose
+
 Quality control was performed to evaluate the quality of sequencing reads >
 
 This step helps identify:
+
 * Poor-quality reads
 * Adapter contamination
 * GC-content abnormalities
 * Read quality distribution
 * Sequencing biases
-* Tool Used
- - FastQC
+* Tool Used: FastQC
+
 FastQC generates quality reports for sequencing data.
+
 * Input:
- - PacBio long reads: 
-raw_data/genome_reads/pacbio/*.fastq.gz
- - RNA-seq reads: 
-raw_data/rnaseq_reads/*.fastq.gz
-* Scripts Used
- - scripts/fastqc_pacbio.sh
- - scripts/fastqc_rnaseq.sh
+PacBio long reads: raw_data/genome_reads/pacbio/*.fastq.gz
+RNA-seq reads: raw_data/rnaseq_reads/*.fastq.gz
+
+* Scripts Used: 
+1. scripts/fastqc_pacbio.sh
+2. scripts/fastqc_rnaseq.sh
 * Output
  - qc/fastqc_raw/
 * generated HTML reports:
