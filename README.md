@@ -2,27 +2,24 @@
 
 ## Project Overview
 
-This project was completed as part of the Genome Analysis course
-at Uppsala University.
+This project was completed as part of the Genome Analysis course at Uppsala University.
 
 ## Objectives
 
-The Objective of the project was to perform a complete de 
-novo bacterial genome assemble and ananlysis workflow using 
-long-read genome sequencing data together with RNA-seq 
-transcriptomic data.
+The Objective of the project was to perform a complete de novo bacterial genome assemble and ananlysis workflow using long-read genome sequencing data together with RNA-seq  transcriptomic data.
  
 ## Reference Paper
 
-This project follows the workflow presented in the 
-course student manual and is based on the following study:
+This project follows the workflow presented in the  course student manual and is based on the following study:
 
 Zhang X, de Maat V, Guzmán Prieto AM, Prajsnar TK, Bayjanov JR, de Been M, et al.  
-*RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant Enterococcus faecium during growth in human serum.*  
+***RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant Enterococcus faecium during growth in human serum.***  
 BMC Genomics. 2017;18:893. https://doi.org/10.1186/s12864-017-4299-9
 
-The organism analyzed in this project is: ** Enterococcus faecium** 
+The organism analyzed in this project is ** Enterococcus faecium.**
+ 
 The project includes 
+
 1. Raw read quality control
 2. Genome assembly using long-reads
 3. Assembly evaluation
