@@ -986,6 +986,50 @@ Large intermediate files and raw sequencing data were excluded because of storag
 
 ---
 
+# Biological interpretation: 
+
+The analyses performed in this project provide important insights into how vancomycin-resistant Enterococcus faecium adapts to nutrient-limited environments such as human serum.
+
+RNA-seq analysis showed that many genes changed expression levels between growth in rich medium (BHI) and growth in serum conditions. These transcriptional changes indicate that E. faecium undergoes extensive metabolic adaptation in response to environmental stress and nutrient limitation.
+
+One of the most important findings was the increased importance of genes involved in:
+
+purine biosynthesis
+pyrimidine biosynthesis
+carbohydrate uptake systems
+stress adaptation pathways
+
+These findings are highly consistent with the reference study by Zhang et al. (2017), where nucleotide biosynthesis pathways were identified as critical for bacterial fitness during bloodstream growth.
+
+The original paper demonstrated that genes such as:
+
+purD
+purH
+pyrF
+pyrK
+manY
+
+contributed significantly to bacterial survival in serum and virulence during infection experiments.
+
+Our project reproduced the same overall biological pattern through genome assembly, annotation, RNA-seq mapping, differential expression analysis, and resistance analysis.
+
+The observed upregulation of nucleotide biosynthesis genes suggests that human serum is a nutrient-poor environment where bacteria must synthesize nucleotides de novo in order to survive and proliferate.
+
+Similarly, phosphotransferase system (PTS) genes involved in carbohydrate uptake are important because glucose availability in serum is limited. Efficient carbohydrate acquisition therefore becomes essential for bacterial growth.
+
+Resistance gene analysis further demonstrated the presence of clinically relevant antimicrobial resistance determinants, supporting the characterization of the isolate as a multidrug-resistant VRE strain.
+
+Plasmid-associated regions identified during BLAST analysis may contribute to:
+
+horizontal gene transfer
+antibiotic resistance dissemination
+virulence-associated functions
+adaptive evolution
+
+Together, these findings demonstrate that successful bloodstream survival of E. faecium depends on coordinated metabolic adaptation, nutrient acquisition, and resistance mechanisms.
+
+---
+
 # Conclusion
 
 The genome of *Enterococcus faecium* was successfully assembled and analyzed using long-read sequencing and RNA-seq data.
