@@ -1,26 +1,18 @@
 # Genome Analysis Project – *Enterococcus faecium*
 
-## Reference Paper
-
-Zhang X, de Maat V, Guzmán Prieto AM, Prajsnar TK, Bayjanov JR, de Been M, et al.  
-***RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant Enterococcus faecium during growth in human serum.***  
-BMC Genomics. 2017;18:893.  
-https://doi.org/10.1186/s12864-017-4299-9
-
----
-
 ## Project Overview
 
 This project was completed as part of the Genome Analysis course at Uppsala University.
 
-The objective of this project was to perform a complete de novo bacterial genome assembly and analysis workflow using long-read genome sequencing data together with RNA-seq transcriptomic data.
-
+## Reference Paper
 The project follows the workflow presented in the course student manual and is based on the following study:
 
+Zhang X, de Maat V, Guzmán Prieto AM, Prajsnar TK, Bayjanov JR, de Been M, et al.  
+***RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant Enterococcus faecium during growth in human serum.***  BMC Genomics. 2017;18:893.  https://doi.org/10.1186/s12864-017-4299-9
 
+---
 ## Objectives
-
-The project included:
+The objective of this project was to perform a complete de novo bacterial genome assembly and analysis workflow using long-read genome sequencing data together with RNA-seq transcriptomic data. The project included:
 
 1. Raw read quality control
 2. Genome assembly using long reads
@@ -36,9 +28,9 @@ The project included:
 
 ---
 
-# Biological Background
+## Biological Background
 
-## What is *Enterococcus faecium*?
+## #What is *Enterococcus faecium*?
 
 *Enterococcus faecium* is a gram-positive bacterium commonly found in the gastrointestinal tract. Some strains are clinically important because they can develop resistance to antibiotics and cause hospital-acquired infections.
 
@@ -113,6 +105,142 @@ The `_1` and `_2` files represent paired-end reads.
 ---
 
 # Project Structure
+
+# Repository Structure
+
+```text
+genome-analysis-project/
+├── annotation
+│   ├── eggnog
+│   │   ├── e_faecium_eggnog.emapper.annotations
+│   │   ├── e_faecium_eggnog.emapper.hits
+│   │   └── e_faecium_eggnog.emapper.seed_orthologs
+│   └── prokka
+│       ├── e_faecium.faa
+│       ├── e_faecium.ffn
+│       ├── e_faecium.fna
+│       ├── e_faecium.fsa
+│       ├── e_faecium.gbk
+│       ├── e_faecium.gff
+│       ├── e_faecium.tbl
+│       ├── e_faecium.tsv
+│       ├── e_faecium.txt
+│       └── e_faecium_clean.gff
+│
+├── assembly
+│   ├── canu
+│   │   ├── correction/
+│   │   ├── trimming/
+│   │   ├── unitigging/
+│   │   ├── e_faecium.contigs.fasta
+│   │   ├── e_faecium.report
+│   │   └── tig00000005.fasta
+│   └── final_assembly
+│
+├── assembly_evaluation
+│   ├── busco
+│   │   └── busco_output
+│   │       ├── full_table.tsv
+│   │       ├── short_summary.txt
+│   │       └── missing_busco_list.tsv
+│   ├── mummer
+│   │   ├── e_faecium.delta
+│   │   └── e_faecium_mummerplot.png
+│   └── quast
+│       ├── basic_stats/
+│       ├── report.pdf
+│       ├── report.html
+│       ├── report.tsv
+│       └── report.txt
+│
+├── expression_analysis
+│   ├── counts
+│   │   ├── gene_counts.txt
+│   │   └── gene_counts.txt.summary
+│   └── deseq2
+│       ├── deseq2_results.csv
+│       ├── MAplot.pdf
+│       └── VolcanoPlot.pdf
+│
+├── logs
+│   ├── busco_5302643.out
+│   ├── canu_assembly_5302578.out
+│   ├── deseq2_5409137.out
+│   ├── featurecounts_5324024.out
+│   ├── mummer_5302654.out
+│   ├── prokka_5302674.out
+│   └── rnaseq_mapping_5304746.out
+│
+├── mapping
+│   ├── bam
+│   │   ├── ERR1797969.bam
+│   │   ├── ERR1797970.bam
+│   │   ├── ERR1797971.bam
+│   │   ├── ERR1797972.bam
+│   │   ├── ERR1797973.bam
+│   │   └── ERR1797974.bam
+│   ├── bwa_index
+│   ├── rnaseq_mapping
+│   └── tnseq_mapping
+│
+├── plasmid_analysis
+│   └── blast
+│       └── results
+│           └── blast_tig00000005.csv
+│
+├── qc
+│   ├── fastqc_raw
+│   │   ├── pacbio/
+│   │   └── rnaseq/
+│   ├── fastqc_trimmed
+│   └── multiqc
+│
+├── raw_data
+│   ├── genome_reads
+│   │   ├── illumina
+│   │   ├── nanopore
+│   │   └── pacbio
+│   ├── rnaseq_reads
+│   └── tnseq_reads
+│
+├── reference_genome
+│   └── reference.fasta
+│
+├── resistance_analysis
+│   └── resfinder
+│       └── results_files
+│           ├── ResFinder_results.txt
+│           ├── PointFinder_results.txt
+│           ├── pheno_table.txt
+│           └── output.json
+│
+├── results
+│   ├── figures
+│   ├── final_results
+│   └── tables
+│
+├── scripts
+│   ├── busco.sh
+│   ├── bwa_index.sh
+│   ├── canu_assembly.sh
+│   ├── deseq2_analysis.R
+│   ├── eggnog.sh
+│   ├── fastqc_pacbio.sh
+│   ├── fastqc_rnaseq.sh
+│   ├── featurecounts.sh
+│   ├── mummer.sh
+│   ├── prokka.sh
+│   ├── quast.sh
+│   ├── rnaseq_mapping.sh
+│   └── samtools_pipeline.sh
+│
+├── trimmed_data
+│   ├── genome_reads
+│   └── rnaseq_reads
+│
+└── visualization
+    └── igv
+        └── igv_snapshot.png
 
 ```text
 genome-analysis-project/
