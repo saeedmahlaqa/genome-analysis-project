@@ -115,13 +115,21 @@ visualization/
 
 ### 1. Genome Sequencing Reads
 * Technology: 
+
 PacBio long-read sequencing.
+
 * Purpose: 
+
 Used for de novo genome assembly.
+
 * Location: 
+
 raw_data/genome_reads/pacbio/
+
 * Input Files
+
  - m131023_*.fastq.gz
+
  - m131024_*.fastq.gz
 
 These files contain raw PacBio sequencing reads.
