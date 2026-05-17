@@ -7,8 +7,7 @@ This project was completed as part of the Genome Analysis course at Uppsala Univ
 ## Reference Paper
 The project follows the workflow presented in the course student manual and is based on the following study:
 
-Zhang X, de Maat V, Guzmán Prieto AM, Prajsnar TK, Bayjanov JR, de Been M, et al.  
-***RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant Enterococcus faecium during growth in human serum.***  BMC Genomics. 2017;18:893.  https://doi.org/10.1186/s12864-017-4299-9
+Zhang X, de Maat V, Guzmán Prieto AM, Prajsnar TK, Bayjanov JR, de Been M, et al.   ***RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant Enterococcus faecium during growth in human serum.***  BMC Genomics. 2017;18:893.  https://doi.org/10.1186/s12864-017-4299-9
 
 ---
 ## Objectives
@@ -38,7 +37,7 @@ Vancomycin-resistant *Enterococcus faecium* (VRE) strains are especially importa
 
 The purpose of this project was to reconstruct and analyze the genome of *E. faecium* using sequencing data and bioinformatics tools.
 
-# Data Used in the Project
+# # Data Used in the Project
 
 ## 1. Genome Sequencing Reads
 
@@ -95,12 +94,14 @@ ERR1797969_2.fastq.gz
 ERR1797974_1.fastq.gz
 ERR1797974_2.fastq.gz
 ```
+
 The `_1` and `_2` files represent paired-end reads.
+
 ---
 
-# Project Repository Structure
+## Project Repository Structure
 
-```text
+```bash
 genome-analysis-project/
 ├── annotation
 │   ├── eggnog
@@ -237,6 +238,8 @@ genome-analysis-project/
 └── visualization
     └── igv
         └── igv_snapshot.png
+
+```
 ---
 
 # Step 1 – Quality Control of Raw Reads
