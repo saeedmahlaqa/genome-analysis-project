@@ -21,8 +21,7 @@ Zhang X, de Maat V, Guzmán Prieto AM, Prajsnar TK, Bayjanov JR, de Been M, et a
 *RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant Enterococcus faecium during growth in human serum.*  
 BMC Genomics. 2017;18:893. https://doi.org/10.1186/s12864-017-4299-9
 
-The organism analyzed in this project is: 
- ** Enterococcus faecium**
+The organism analyzed in this project is: ** Enterococcus faecium** 
 The project includes 
 1. Raw read quality control
 2. Genome assembly using long-reads
@@ -38,28 +37,28 @@ The project includes
 
 ## Data
 
-* Organism: Enterococcus faecium (vancomycin-resistant strain)
-
+* Organism: Enterococcus faecium (vancomycin-resistant 
+strain)
 * Data types:
-- RNA-seq (gene expression analysis)
-- Tn-seq (fitness/essential gene analysis)
-- Genome sequencing data
+ - RNA-seq (gene expression analysis)
+ - Tn-seq (fitness/essential gene analysis)
+ - Genome sequencing data
 
 * Sequencing technologies:
-- Short reads (Illumina)
-- Long reads (PacBio / Nanopore)
+ - Short reads (Illumina)
+ - Long reads (PacBio / Nanopore)
 
 * Experimental conditions:
-- Human serum vs rich medium
+ - Human serum vs rich medium
 
 * Replicates:
-- Multiple biological replicates per condition
+ - Multiple biological replicates per condition
 
 * Reference genome:
-- E. faecium strain E745 (used for mapping and comparison)
+ - E. faecium strain E745 (used for mapping and comparison)
 
 ## Biological Background
-## What is Enterococcus faecium?
+### What is Enterococcus faecium?
 Enterococcus faecium is a gram-positive bacterium commonly
 found in the gastrointestinal tract. Some strains are clinically 
 important because they can develop resistance to antibiotics and
@@ -85,48 +84,67 @@ The main goals of this project were:
 ## Project Structure
 
 annotation/
+
 assembly/
+
 assembly_evaluation/
+
 expression_analysis/
+
 logs/
+
 mapping/
+
 plasmid_analysis/
+
 qc/
+
 reference_genome/
+
 resistance_analysis/
+
 results/
+
 scripts/
+
 visualization/
 
-# Data used in the Project
+## Data used in the Project
 
 ### 1. Genome Sequencing Reads
-Technology: PacBio long-read sequencing.
-Purpose: Used for de novo genome assembly.
-Location: raw_data/genome_reads/pacbio/
-Input Files
-m131023_*.fastq.gz
-m131024_*.fastq.gz
+* Technology: 
+PacBio long-read sequencing.
+* Purpose: 
+Used for de novo genome assembly.
+* Location: 
+raw_data/genome_reads/pacbio/
+* Input Files
+ - m131023_*.fastq.gz
+ - m131024_*.fastq.gz
 
 These files contain raw PacBio sequencing reads.
 
 ### 2. RNA-seq Transcriptomic Reads
-Technology: Illumina paired-end RNA sequencing
-Purpose: Used for transcriptome analysis and differential gene expression.
-Conditions: Two biological conditions were analyzed:
-* Serum
-* BH medium
-Location: raw_data/rnaseq_reads/
-Input Files: 
-ERR1797969_1.fastq.gz
-ERR1797969_2.fastq.gz
-...
-ERR1797974_1.fastq.gz
-ERR1797974_2.fastq.gz
+* Technology: 
+Illumina paired-end RNA sequencing
+* Purpose: 
+Used for transcriptome analysis and differential gene expression.
+* Conditions: 
+Two biological conditions were analyzed:
+ - Serum
+ - BH medium
+* Location: 
+raw_data/rnaseq_reads/
+* Input Files: 
+ - ERR1797969_1.fastq.gz
+ - ERR1797969_2.fastq.gz
+ - ...
+ - ERR1797974_1.fastq.gz
+ - ERR1797974_2.fastq.gz
 The _1 and _2 files represent paired-end reads.
 
 ## Step 1 - Quality Control of Raw Reads
-### Purpose
+* Purpose
 Quality control was performed to evaluate the quality of sequencing reads >
 
 This step helps identify:
@@ -135,18 +153,20 @@ This step helps identify:
 * GC-content abnormalities
 * Read quality distribution
 * Sequencing biases
-### Tool Used
-### FastQC
+* Tool Used
+ - FastQC
 FastQC generates quality reports for sequencing data.
-###Input:
-PacBio long reads: raw_data/genome_reads/pacbio/*.fastq.gz
-RNA-seq reads: raw_data/rnaseq_reads/*.fastq.gz
-### Scripts Used
-scripts/fastqc_pacbio.sh
-scripts/fastqc_rnaseq.sh
-### Output
-qc/fastqc_raw/
-generated HTML reports:
+* Input:
+ - PacBio long reads: 
+raw_data/genome_reads/pacbio/*.fastq.gz
+ - RNA-seq reads: 
+raw_data/rnaseq_reads/*.fastq.gz
+* Scripts Used
+ - scripts/fastqc_pacbio.sh
+ - scripts/fastqc_rnaseq.sh
+* Output
+ - qc/fastqc_raw/
+* generated HTML reports:
 ### Why this step (Quality Control) is important
 Quality control ensures that sequencing data is reliable 
 before assembly or mapping.
@@ -157,18 +177,19 @@ Poor-quality reads can negatively affect:
 * Annotation accuracy 
 
 ## Step 2 - Genome Assembly
-### Purpose
+* Purpose
 Genome assembly reconstructs the complete genome 
 sequence from sequencing reads. Because no finished genome 
 was provided directly, the genome had to be assembled from 
 raw PacBio reads.
-###Tool Used: Canu
+* Tool Used: 
+ - Canu
 Canu is a long-read genome assembler optimized for PacBio and Nanopore sequencing data.
-
-###Input: 
-
-PacBio long reads: raw_data/genome_reads/pacbio/*.fastq.gz
-Script Used: scripts/canu_assembly.sh
+* Input: 
+ - PacBio long reads: 
+raw_data/genome_reads/pacbio/*.fastq.gz
+* Script Used: 
+scripts/canu_assembly.sh
 ### Final Assembly Output
 assembly/canu/e_faecium.contigs.fasta
 
