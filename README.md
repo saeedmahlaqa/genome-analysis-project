@@ -38,29 +38,27 @@ The project includes
 
 ## Data
 
-*Organism: Enterococcus faecium (vancomycin-resistant strain)
+* Organism: Enterococcus faecium (vancomycin-resistant strain)
 
-*Data types:
-
-** RNA-seq (gene expression analysis)
-** Tn-seq (fitness/essential gene analysis)
-** Genome sequencing data
+* Data types:
+- RNA-seq (gene expression analysis)
+- Tn-seq (fitness/essential gene analysis)
+- Genome sequencing data
 
 * Sequencing technologies:
-** Short reads (Illumina)
-** Long reads (PacBio / Nanopore)
+- Short reads (Illumina)
+- Long reads (PacBio / Nanopore)
 
-*Experimental conditions:
+* Experimental conditions:
+- Human serum vs rich medium
 
-** Human serum vs rich medium
 * Replicates:
+- Multiple biological replicates per condition
 
-** Multiple biological replicates per condition
 * Reference genome:
+- E. faecium strain E745 (used for mapping and comparison)
 
-** E. faecium strain E745 (used for mapping and comparison)
-
-# Biological Background
+## Biological Background
 ## What is Enterococcus faecium?
 Enterococcus faecium is a gram-positive bacterium commonly
 found in the gastrointestinal tract. Some strains are clinically 
