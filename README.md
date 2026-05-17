@@ -16,7 +16,7 @@ Zhang X, de Maat V, Guzmán Prieto AM, Prajsnar TK, Bayjanov JR, de Been M, et a
 ***RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant Enterococcus faecium during growth in human serum.***  
 BMC Genomics. 2017;18:893. https://doi.org/10.1186/s12864-017-4299-9
 
-The organism analyzed in this project is ** Enterococcus faecium.**
+The organism analyzed in this project is **Enterococcus faecium.**
  
 The project includes 
 
@@ -37,21 +37,26 @@ The project includes
 * Organism: Enterococcus faecium (vancomycin-resistant 
 strain)
 * Data types:
+
  - RNA-seq (gene expression analysis)
  - Tn-seq (fitness/essential gene analysis)
  - Genome sequencing data
 
 * Sequencing technologies:
+
  - Short reads (Illumina)
  - Long reads (PacBio / Nanopore)
 
 * Experimental conditions:
+
  - Human serum vs rich medium
 
 * Replicates:
+
  - Multiple biological replicates per condition
 
 * Reference genome:
+
  - E. faecium strain E745 (used for mapping and comparison)
 
 ## Biological Background
