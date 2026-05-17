@@ -1017,7 +1017,7 @@ contributed significantly to bacterial survival and fitness in serum conditions 
 
 The observed upregulation of nucleotide biosynthesis genes suggests that human serum is a nutrient-poor environment where bacteria must synthesize nucleotides de novo in order to survive and proliferate.
 
-Similarly, phosphotransferase system (PTS) genes involved in carbohydrate uptake are important because PTS transport systems are likely important for efficient nutrient acquisition under nutrient-limited serum conditions. Efficient carbohydrate acquisition therefore becomes essential for bacterial growth.
+Similarly, phosphotransferase system (PTS) genes involved in carbohydrate uptake are likely important for efficient nutrient acquisition under nutrient-limited serum conditions. Efficient carbohydrate acquisition therefore becomes essential for bacterial growth.
 
 Resistance gene analysis further demonstrated the presence of clinically relevant antimicrobial resistance determinants, supporting the characterization of the isolate as a multidrug-resistant VRE strain.
 
