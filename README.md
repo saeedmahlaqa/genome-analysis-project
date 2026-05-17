@@ -23,8 +23,7 @@ The objective of this project was to perform a complete de novo bacterial genome
 8. Differential expression analysis
 9. Antibiotic resistance analysis
 10. Plasmid analysis
-11. Visualization of genomic features
-
+11. Visualization of genomic features (IGV visualization was used to inspect RNA-seq read coverage and alignment consistency across annotated genomic regions.)
 ---
 
 ## Biological Background
@@ -33,9 +32,9 @@ The objective of this project was to perform a complete de novo bacterial genome
 
 *Enterococcus faecium* is a gram-positive bacterium commonly found in the gastrointestinal tract. Some strains are clinically important because they can develop resistance to antibiotics and cause hospital-acquired infections.
 
-Vancomycin-resistant *Enterococcus faecium* (VRE) strains are especially important in clinical microbiology because they are associated with multidrug resistance and bloodstream infections.
+Vancomycin-resistant *Enterococcus faecium* (VRE) strains are especially important in clinical microbiology because they are associated with multidrug resistance and bloodstream infections. Human serum represents a nutrient-limited and host-associated environment that mimics bloodstream infection conditions encountered during systemic infection.
 
-The purpose of this project was to reconstruct and analyze the genome of *E. faecium* using sequencing data and bioinformatics tools.
+The purpose of this project was to reconstruct and analyze the genome of *E. faecium* using sequencing data and bioinformatics tools. 
 
 ## Data Used in the Project
 
@@ -1005,18 +1004,20 @@ These findings are highly consistent with the reference study by Zhang et al. (2
 The original paper demonstrated that genes such as:
 
 purD
+
 purH
+
 pyrF
+
 pyrK
+
 manY
 
-contributed significantly to bacterial survival in serum and virulence during infection experiments.
-
-Our project reproduced the same overall biological pattern through genome assembly, annotation, RNA-seq mapping, differential expression analysis, and resistance analysis.
+contributed significantly to bacterial survival and fitness in serum conditions in the original study. Our analyses supported the same overall biological trends reported in the original study.
 
 The observed upregulation of nucleotide biosynthesis genes suggests that human serum is a nutrient-poor environment where bacteria must synthesize nucleotides de novo in order to survive and proliferate.
 
-Similarly, phosphotransferase system (PTS) genes involved in carbohydrate uptake are important because glucose availability in serum is limited. Efficient carbohydrate acquisition therefore becomes essential for bacterial growth.
+Similarly, phosphotransferase system (PTS) genes involved in carbohydrate uptake are important because PTS transport systems are likely important for efficient nutrient acquisition under nutrient-limited serum conditions. Efficient carbohydrate acquisition therefore becomes essential for bacterial growth.
 
 Resistance gene analysis further demonstrated the presence of clinically relevant antimicrobial resistance determinants, supporting the characterization of the isolate as a multidrug-resistant VRE strain.
 
@@ -1066,6 +1067,6 @@ RNA-seq analysis revealed major transcriptional differences between growth in ri
 
 In agreement with the findings of Zhang et al. (2017), genes involved in purine and pyrimidine biosynthesis, as well as carbohydrate uptake systems, appear to play essential roles in bacterial survival and fitness during serum growth.
 
-Resistance analysis further confirmed the multidrug-resistant nature of the isolate, consistent with the biology of clinically important VRE strains.
+Resistance analysis identified multiple antimicrobial resistance-associated genes consistent with a multidrug-resistant VRE isolate.
 
 Overall, this project demonstrates how integrated genome assembly, transcriptomics, functional annotation, and comparative genomics can be used to investigate bacterial pathogenicity and host adaptation mechanisms. The workflow also highlights the importance of metabolic pathways as potential therapeutic targets for combating bloodstream infections caused by multidrug-resistant Enterococcus faecium.
