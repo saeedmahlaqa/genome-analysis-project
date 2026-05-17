@@ -77,7 +77,7 @@ Used for transcriptome analysis and differential gene expression analysis.
 Two biological conditions were analyzed:
 
 1. Human serum
-2. BH medium
+2. BHI medium
 
 ### Location
 
