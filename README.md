@@ -37,7 +37,7 @@ Vancomycin-resistant *Enterococcus faecium* (VRE) strains are especially importa
 
 The purpose of this project was to reconstruct and analyze the genome of *E. faecium* using sequencing data and bioinformatics tools.
 
-# # Data Used in the Project
+## Data Used in the Project
 
 ## 1. Genome Sequencing Reads
 
@@ -256,15 +256,11 @@ This step helps identify:
 * read quality distribution
 * possible contamination
 
----
-
 ## Tool Used
 
 ### FastQC
 
 FastQC generates quality reports for sequencing data.
-
----
 
 ## Input
 
@@ -280,16 +276,12 @@ raw_data/genome_reads/pacbio/*.fastq.gz
 raw_data/rnaseq_reads/*.fastq.gz
 ```
 
----
-
 ## Scripts Used
 
 ```bash
 scripts/fastqc_pacbio.sh
 scripts/fastqc_rnaseq.sh
 ```
-
----
 
 ## Output
 
@@ -303,7 +295,7 @@ Generated output:
 
 ---
 
-## Why This Step Was Important
+### Why This Step Was Important
 
 Quality control ensures sequencing data is reliable before assembly or mapping.
 
@@ -324,15 +316,11 @@ Genome assembly reconstructs the genome sequence from raw sequencing reads.
 
 Because no finished genome was directly provided, the genome had to be assembled from PacBio long reads.
 
----
-
 ## Tool Used
 
 ### Canu
 
 Canu is a long-read genome assembler optimized for PacBio and Nanopore sequencing technologies.
-
----
 
 ## Input
 
@@ -340,15 +328,11 @@ Canu is a long-read genome assembler optimized for PacBio and Nanopore sequencin
 raw_data/genome_reads/pacbio/*.fastq.gz
 ```
 
----
-
 ## Script Used
 
 ```bash
 scripts/canu_assembly.sh
 ```
-
----
 
 ## Final Assembly Output
 
@@ -357,8 +341,6 @@ assembly/canu/e_faecium.contigs.fasta
 ```
 
 This FASTA file contains assembled genome contigs.
-
----
 
 ## Internal Canu Steps
 
@@ -370,8 +352,6 @@ Canu performs several internal processes:
 * unitig construction
 * consensus generation
 
----
-
 ## Important Internal Directories
 
 ```bash
@@ -381,8 +361,6 @@ assembly/canu/unitigging/
 ```
 
 These contain intermediate assembly files.
-
----
 
 ## Why This Step Was Important
 
@@ -413,23 +391,17 @@ Three tools were used:
 
 1. QUAST
 2. BUSCO
-3. MUMmer
+3. MUMmerPlot
 
----
-
-# Step 3A – QUAST
+## Step 3A – QUAST
 
 ## Purpose
 
 QUAST evaluates assembly statistics and assembly quality.
 
----
-
 ## Tool Used
 
-### QUAST
-
----
+QUAST
 
 ## Input
 
@@ -445,15 +417,11 @@ assembly/canu/e_faecium.contigs.fasta
 reference_genome/reference.fasta
 ```
 
----
-
 ## Script Used
 
 ```bash
 scripts/quast.sh
 ```
-
----
 
 ## Output
 
@@ -474,8 +442,6 @@ Plots:
 basic_stats/
 ```
 
----
-
 ## What QUAST Measures
 
 QUAST reports:
@@ -486,8 +452,6 @@ QUAST reports:
 * N50
 * alignment statistics
 * assembly fragmentation
-
----
 
 ## Why This Step Was Important
 
@@ -507,11 +471,9 @@ Good assembly quality is essential for reliable downstream analysis.
 
 BUSCO evaluates genome completeness using conserved single-copy genes.
 
----
-
 ## Tool Used
 
-### BUSCO
+BUSCO
 
 Database used:
 
@@ -519,23 +481,17 @@ Database used:
 bacteria_odb10
 ```
 
----
-
 ## Input
 
 ```bash
 assembly/canu/e_faecium.contigs.fasta
 ```
 
----
-
 ## Script Used
 
 ```bash
 scripts/busco.sh
 ```
-
----
 
 ## Output
 
@@ -549,8 +505,6 @@ Important files:
 * full_table.tsv
 * missing_busco_list.tsv
 
----
-
 ## What BUSCO Measures
 
 BUSCO classifies conserved genes into:
@@ -560,16 +514,12 @@ BUSCO classifies conserved genes into:
 * Fragmented
 * Missing
 
----
-
 ## Important Results
 
 * Complete BUSCOs: ~98%
 * Missing BUSCOs: very low
 
 These results indicate a highly complete bacterial genome assembly.
-
----
 
 ## Why This Step Was Important
 
@@ -585,13 +535,9 @@ BUSCO provides a biological estimate of genome completeness.
 
 MUMmer compares the assembled genome against a reference genome.
 
----
-
 ## Tool Used
 
-### MUMmer
-
----
+MUMmer
 
 ## Input
 
@@ -607,15 +553,11 @@ assembly/canu/e_faecium.contigs.fasta
 reference_genome/reference.fasta
 ```
 
----
-
 ## Script Used
 
 ```bash
 scripts/mummer.sh
 ```
-
----
 
 ## Output
 
@@ -628,8 +570,6 @@ Important file:
 ```bash
 e_faecium_mummerplot.png
 ```
-
----
 
 ## Why This Step Was Important
 
@@ -651,31 +591,22 @@ The dot plot helps determine whether the assembly aligns well with the reference
 
 Genome annotation identifies genes and genomic features in the assembled genome.
 
----
-
 ## Tool Used
 
-### Prokka
+Prokka
 
 Prokka performs rapid bacterial genome annotation.
-
----
 
 ## Input
 
 ```bash
 assembly/canu/e_faecium.contigs.fasta
 ```
-
----
-
 ## Script Used
 
 ```bash
 scripts/prokka.sh
 ```
-
----
 
 ## Output
 
@@ -695,8 +626,6 @@ Important files:
 | `.tsv` | Annotation summary          |
 | `.txt` | Statistics summary          |
 
----
-
 ## What Annotation Means
 
 Annotation identifies:
@@ -707,8 +636,6 @@ Annotation identifies:
 * genomic features
 * coding regions
 
----
-
 ## Important Results
 
 * ~3093 coding sequences
@@ -716,8 +643,6 @@ Annotation identifies:
 * 1 tmRNA detected
 
 These values are consistent with typical *Enterococcus faecium* genomes.
-
----
 
 ## Why This Step Was Important
 
@@ -737,9 +662,7 @@ Functional annotation assigns predicted biological functions to genes.
 
 ## Tool Used
 
-### eggNOG-mapper
-
----
+eggNOG-mapper
 
 ## Input
 
@@ -749,15 +672,11 @@ Protein sequences from Prokka:
 annotation/prokka/e_faecium.faa
 ```
 
----
-
 ## Script Used
 
 ```bash
 scripts/eggnog.sh
 ```
-
----
 
 ## Output
 
@@ -771,8 +690,6 @@ Important files:
 * `*.hits`
 * `*.seed_orthologs`
 
----
-
 ## What Functional Annotation Provides
 
 Functional annotation predicts:
@@ -783,13 +700,9 @@ Functional annotation predicts:
 * protein families
 * COG categories
 
----
-
 ## Why This Step Was Important
 
 Functional annotation helps interpret the biological roles of predicted genes.
-
----
 
 # Step 6 – RNA-seq Mapping
 
@@ -797,15 +710,11 @@ Functional annotation helps interpret the biological roles of predicted genes.
 
 RNA-seq reads were mapped to the assembled genome to determine gene expression levels.
 
----
-
 ## Tool Used
 
-### BWA
+BWA
 
 BWA aligns sequencing reads to a reference genome.
-
----
 
 ## Input
 
@@ -821,8 +730,6 @@ assembly/canu/e_faecium.contigs.fasta
 raw_data/rnaseq_reads/*.fastq.gz
 ```
 
----
-
 ## Scripts Used
 
 ```bash
@@ -831,8 +738,6 @@ scripts/rnaseq_mapping.sh
 scripts/samtools_pipeline.sh
 ```
 
----
-
 ## Workflow
 
 1. Build BWA index
@@ -840,8 +745,6 @@ scripts/samtools_pipeline.sh
 3. Convert SAM to BAM
 4. Sort BAM files
 5. Index BAM files
-
----
 
 ## Output
 
@@ -857,8 +760,6 @@ ERR1797970.bam
 ...
 ```
 
----
-
 ## Why This Step Was Important
 
 RNA-seq mapping identifies where transcripts originate in the genome.
@@ -873,15 +774,11 @@ This enables quantification of gene expression.
 
 Count the number of reads mapping to each gene.
 
----
-
 ## Tool Used
 
-### featureCounts
+featureCounts
 
 featureCounts counts mapped reads overlapping genomic features.
-
----
 
 ## Input
 
@@ -897,23 +794,17 @@ mapping/bam/*.bam
 annotation/prokka/e_faecium.gff
 ```
 
----
-
 ## Script Used
 
 ```bash
 scripts/featurecounts.sh
 ```
 
----
-
 ## Output
 
 ```bash
 expression_analysis/counts/gene_counts.txt
 ```
-
----
 
 ## Why This Step Was Important
 
@@ -927,15 +818,11 @@ Gene-level counts are required for statistical differential expression analysis.
 
 The purpose of this step was to identify genes that were significantly upregulated or downregulated between biological conditions.
 
----
-
 ## Tool Used
 
-### DESeq2
+DESeq2
 
 DESeq2 performs statistical analysis of RNA-seq count data.
-
----
 
 ## Input
 
@@ -943,15 +830,11 @@ DESeq2 performs statistical analysis of RNA-seq count data.
 expression_analysis/counts/gene_counts.txt
 ```
 
----
-
 ## Script Used
 
 ```bash
 scripts/deseq2_analysis.R
 ```
-
----
 
 ## Output
 
@@ -964,8 +847,6 @@ Important files:
 * deseq2_results.csv
 * MAplot.pdf
 * VolcanoPlot.pdf
-
----
 
 ## Biological Interpretation
 
@@ -987,13 +868,9 @@ Differentially expressed genes may be involved in:
 
 Resistance analysis was performed to identify antimicrobial resistance genes within the assembled genome.
 
----
-
 ## Tool Used
 
-### ResFinder
-
----
+ResFinder
 
 ## Output
 
@@ -1007,7 +884,6 @@ Important files:
 * PointFinder_results.txt
 * pheno_table.txt
 
----
 
 ## Biological Interpretation
 
@@ -1023,13 +899,9 @@ The presence of vancomycin-associated resistance genes is consistent with the VR
 
 BLAST analysis was performed to investigate plasmid-associated sequences.
 
----
-
 ## Tool Used
 
-### BLAST
-
----
+BLAST
 
 ## Output
 
@@ -1042,8 +914,6 @@ Important file:
 ```bash
 blast_tig00000005.csv
 ```
-
----
 
 ## Biological Interpretation
 
@@ -1061,21 +931,15 @@ Plasmid-associated regions may contain:
 
 Visualization was performed to inspect genomic alignments and mapped reads.
 
----
-
 ## Tool Used
 
-### IGV (Integrative Genomics Viewer)
-
----
+IGV (Integrative Genomics Viewer)
 
 ## Output
 
 ```bash
 visualization/igv/igv_snapshot.png
 ```
-
----
 
 # Main Results Summary
 
@@ -1137,7 +1001,3 @@ Genome annotation and functional annotation identified biologically meaningful g
 RNA-seq analysis enabled investigation of gene expression changes, while resistance analysis identified clinically relevant antimicrobial resistance genes.
 
 Overall, the project demonstrates a complete bacterial genome analysis workflow using modern bioinformatics tools and high-performance computing resources on UPPMAX.
-
-```
-```
-
